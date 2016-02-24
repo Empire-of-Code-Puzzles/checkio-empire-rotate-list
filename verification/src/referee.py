@@ -6,10 +6,6 @@ from checkio_referee import ENV_NAME
 import settings_env
 from tests import TESTS
 
-Validator = validators.FloatEqualValidator
-
-Validator.PRECISION = 2
-
 
 class Referee(RefereeBase):
     TESTS = TESTS
@@ -20,7 +16,6 @@ class Referee(RefereeBase):
         ENV_NAME.JS_NODE: "rotateList"
     }
 
-    VALIDATOR = Validator
     ENV_COVERCODE = {
         ENV_NAME.PYTHON: covercodes.py_unwrap_args,
         ENV_NAME.JS_NODE: covercodes.js_unwrap_args
